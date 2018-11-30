@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2014 The Android Open Source Project
+<?xml version="1.0" encoding="utf-8"?><!-- Copyright (C) 2014 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -17,9 +16,14 @@
 <resources>
 
     <string name="send_notification">Send notification!</string>
-    <string name="portBI">PortBI</string>
+    <string name="portBI">Porty</string>
     <string name="answer_portbi">Answer Now</string>
     <string name="reply">Reply</string>
     <string name="stop_service">End Chat Session</string>
+    <string name="reply_label">Reply</string>
 
+    <string-array name="reply_choices">
+        <item>Order now</item>
+        <item>Ask for clarification</item>
+    </string-array>
 </resources>

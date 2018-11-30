@@ -4,9 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingTop="5dp"
+    android:paddingTop="10dp"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingBottom="10dp"
     tools:context="de.f2s.mandm.portbi.MainActivity">
 
     <ImageView
@@ -21,6 +21,7 @@
         android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/continentalLogo">
@@ -28,10 +29,22 @@
         <TextView
             android:id="@+id/history"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Sample text"
+            android:layout_height="match_parent"
+            android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
     </ScrollView>
+
+    <ImageView
+        android:id="@+id/pullButton"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:backgroundTint="@color/cardview_dark_background"
+        android:src="@android:drawable/ic_popup_sync"
+        android:tint="@color/cardview_dark_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/scrollView2" />
 
 </android.support.constraint.ConstraintLayout>

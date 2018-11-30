@@ -17,22 +17,27 @@
 package de.f2s.mandm.portbi;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
+import android.app.RemoteInput;
 import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
 import android.text.TextUtils;
+import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import static de.f2s.mandm.portbi.ResponderService.ACTION_RESPONSE;
 import static de.f2s.mandm.portbi.ResponderService.EXTRA_NOTIFICATION;
 
 
 public class MainActivity extends Activity {
-
-    public static final String ACTION_SNOOZE = "de.f2s.mandm.portbi.snooze";
     @SuppressWarnings("unused")
     private static final String TAG = "MainActivity";
 
@@ -43,6 +48,8 @@ public class MainActivity extends Activity {
     public static final String ACTION_GET_CONVERSATION = "de.f2s.mandm.portbi.CONVERSATION";
 
     private BroadcastReceiver mReceiver;
+
+    ProgressDialog prgDialog;
 
     private TextView mHistoryView;
 
@@ -57,9 +64,29 @@ public class MainActivity extends Activity {
                 processMessage(intent);
             }
         };
+
         mHistoryView = (TextView) findViewById(R.id.history);
         startResponderService(ResponderService.ACTION_WAIT);
         getNotifications();
+        ImageView mPullButton = findViewById(R.id.pullButton);
+        mPullButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                checkStatus();
+            }
+        });
+
+        prgDialog = new ProgressDialog(this, R.style.AppCompatAlertDialogStyle);
+        prgDialog.setMessage("Checking...");
+
+        // Set Cancelable as True
+        prgDialog.setCancelable(true);
+        prgDialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
+            @Override
+            public void onCancel(DialogInterface dialogInterface) {
+                prgDialog.hide();
+            }
+        });
     }
 
     private void startResponderService(String action) {
@@ -103,13 +130,32 @@ public class MainActivity extends Activity {
     private String baseUrl = "localhost/api/v1/getNotifications";
     boolean cont;
 
+    public void checkStatus() {
+        prgDialog.show();
+        AsyncTask.execute(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Thread.sleep(5000);
+                    mHistoryView.setText("");
+                    startResponderService(ACTION_RESPONSE, "No changes");
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                prgDialog.cancel();
+            }
+        });
+
+    }
+
     public void getNotifications() {
         AsyncTask.execute(new Runnable() {
             @Override
             public void run() {
                 try {
-                    Thread.sleep(2000);
-                    startResponderService(ResponderService.ACTION_UPDATE, "Test!");
+                    Thread.sleep(20000);
+                    startResponderService(ResponderService.ACTION_UPDATE, "There's a new order!");
+                    prgDialog.cancel();
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

@@ -45,6 +45,11 @@
                 <action android:name="de.f2s.mandm.portbi.CONVERSATION" />
             </intent-filter>
         </service>
+
+        <service
+            android:name=".NotificationHandlerService"
+            android:exported="false">
+        </service>
     </application>
 
 </manifest>

@@ -16,6 +16,5 @@
 -->
 
 <resources>
-
-
+    <color name="colorAccent">#FFA500</color>
 </resources>
