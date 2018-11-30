@@ -11,6 +11,7 @@ anim abc_slide_out_bottom
 anim abc_slide_out_top
 anim abc_tooltip_enter
 anim abc_tooltip_exit
+array reply_choices
 attr actionBarDivider
 attr actionBarItemBackground
 attr actionBarPopupTheme
@@ -397,6 +398,7 @@ color cardview_dark_background
 color cardview_light_background
 color cardview_shadow_end_color
 color cardview_shadow_start_color
+color colorAccent
 color dim_foreground_disabled_material_dark
 color dim_foreground_disabled_material_light
 color dim_foreground_material_dark
@@ -776,6 +778,7 @@ id parentPanel
 id percent
 id progress_circular
 id progress_horizontal
+id pullButton
 id radio
 id right
 id right_icon
@@ -932,6 +935,7 @@ string app_name
 string intro_message
 string portBI
 string reply
+string reply_label
 string search_menu_title
 string send_notification
 string status_bar_notification_info_overflow
@@ -941,6 +945,7 @@ style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog
 style Animation_AppCompat_DropDownUp
 style Animation_AppCompat_Tooltip
+style AppCompatAlertDialogStyle
 style AppTheme
 style Base_AlertDialog_AppCompat
 style Base_AlertDialog_AppCompat_Light

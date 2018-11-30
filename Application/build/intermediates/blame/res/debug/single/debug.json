@@ -408,6 +408,10 @@
         "source": "C:\\Users\\rbermudez\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\108cfea9f6482040553777d2d159171b\\res\\drawable-v21\\abc_dialog_material_background.xml"
     },
     {
+        "merged": "D:\\android\\f2sLeilaWatch\\Application\\build\\intermediates\\res\\merged\\debug\\layout_abc_screen_toolbar.xml.flat",
+        "source": "C:\\Users\\rbermudez\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\108cfea9f6482040553777d2d159171b\\res\\layout\\abc_screen_toolbar.xml"
+    },
+    {
         "merged": "D:\\android\\f2sLeilaWatch\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-v21_abc_list_divider_material.xml.flat",
         "source": "C:\\Users\\rbermudez\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\108cfea9f6482040553777d2d159171b\\res\\drawable-v21\\abc_list_divider_material.xml"
     },
