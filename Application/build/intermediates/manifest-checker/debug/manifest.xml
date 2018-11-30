@@ -15,10 +15,10 @@
      limitations under the License.
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.android.wearable.elizachat" >
+    package="de.f2s.mandm.portbi" >
 
     <uses-sdk
-        android:minSdkVersion="18"
+        android:minSdkVersion="25"
         android:targetSdkVersion="28" />
 
     <uses-feature android:name="android.hardware.type.watch" />
@@ -27,8 +27,9 @@
 
     <application
         android:allowBackup="true"
+        android:appComponentFactory="android.support.v4.app.CoreComponentFactory"
         android:debuggable="true"
-        android:icon="@mipmap/ic_app_eliza"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
@@ -39,7 +40,7 @@
             android:value="true" />
 
         <activity
-            android:name="com.example.android.wearable.elizachat.MainActivity"
+            android:name="de.f2s.mandm.portbi.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -48,16 +49,16 @@
             </intent-filter>
         </activity>
 
-        <service android:name="com.example.android.wearable.elizachat.ResponderService" >
+        <service android:name="de.f2s.mandm.portbi.ResponderService" >
             <intent-filter>
-                <action android:name="com.example.android.wearable.elizachat.REPLY" />
-                <action android:name="com.example.android.wearable.elizachat.CONVERSATION" />
+                <action android:name="de.f2s.mandm.portbi.REPLY" />
+                <action android:name="de.f2s.mandm.portbi.CONVERSATION" />
             </intent-filter>
         </service>
 
         <provider
             android:name="com.android.tools.ir.server.InstantRunContentProvider"
-            android:authorities="com.example.android.wearable.elizachat.com.android.tools.ir.server.InstantRunContentProvider"
+            android:authorities="de.f2s.mandm.portbi.com.android.tools.ir.server.InstantRunContentProvider"
             android:multiprocess="true" />
     </application>
 

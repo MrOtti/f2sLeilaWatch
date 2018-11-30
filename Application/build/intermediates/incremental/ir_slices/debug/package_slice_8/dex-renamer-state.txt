@@ -1,4 +1,4 @@
-#Fri Nov 30 10:43:23 CET 2018
+#Fri Nov 30 14:29:53 CET 2018
 base.0=D\:\\android\\f2sLeilaWatch\\Application\\build\\intermediates\\transforms\\dexMerger\\debug\\8
 path.0=classes.dex
 renamed.0=classes.dex

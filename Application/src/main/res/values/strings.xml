@@ -17,8 +17,8 @@
 <resources>
 
     <string name="send_notification">Send notification!</string>
-    <string name="eliza">Eliza</string>
-    <string name="answer_eliza">Answer Eliza</string>
+    <string name="portBI">PortBI</string>
+    <string name="answer_portbi">Answer Now</string>
     <string name="reply">Reply</string>
     <string name="stop_service">End Chat Session</string>
 
